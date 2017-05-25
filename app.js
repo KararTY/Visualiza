@@ -4,11 +4,6 @@ let logger = require('morgan')
 // Uncomment after installing 'serve-favicon' module.
 // let favicon = require('serve-favicon')
 
-/**
- * Index page.
- */
-let index = require('./routes/index')
-
 let app = express()
 
 // View engine - Jade/Pug - setup
@@ -60,5 +55,3 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500)
   res.render('error')
 })
-
-module.exports = app
