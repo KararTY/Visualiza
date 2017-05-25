@@ -1,0 +1,12 @@
+extends layout
+block content
+  - var message = message || 'Undefined error.'
+  div(class="content has-text-centered")
+    if error.message
+      h1= error.message
+    else
+      h1= message
+    if error.status
+      h2= error.status + ' - Skepticism not found.'
+    if !error.status === 404
+      pre #{error.stack}

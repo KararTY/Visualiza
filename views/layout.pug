@@ -1,0 +1,68 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta( name="viewport" content="width=device-width,initial-scale=1")
+    title="Visualiza - Audio visualizer"
+    meta( name="author" content="Karar Al-Remahy" )
+    meta( name="description" content="Audio visualizer - Visualiza" )
+    meta( name="keywords" content="visualizer, visualiza, javascript, p5.js" )
+    meta( name="title" content="Visualiza - Audio visualizer" )
+    //- link(href="/img/favicon.ico", rel="shortcut icon")
+    link(href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.1/css/bulma.min.css", rel="stylesheet")
+    link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet")
+    style.
+      @import url('https://fonts.googleapis.com/css?family=Montserrat');
+      a {
+        color: rgb(127, 140, 141)
+      }
+      a:hover {
+        color: rgb(44, 62, 80);
+      }
+      .hero.is-dark {
+        background-color: rgb(44, 62, 80);
+        color: rgb(127, 140, 141);
+      }
+      .button.is-dark {
+        background-color: rgb(52, 73, 94);
+        color: rgb(127, 140, 141);
+      }
+      .button.is-dark:hover {
+        background-color: rgb(255, 255, 255);
+        color: rgb(44, 62, 80);
+      }
+      .hero.is-dark .nav {
+        box-shadow: none;
+      }
+      #overlay {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+      }
+      body {
+        font-family: 'Montserrat', sans-serif;
+      }
+  body
+    //- Head
+    div(class="hero is-dark")
+      header(class="hero-head nav")
+        div(class="container")
+          //- Left in nav
+          div(class="nav-left")
+            a(class="nav-item" href="https://twitter.com/karar_alr" target="_blank")
+              span(class="icon")
+                i(class="fa fa-twitter")
+            div(class="nav-item")
+              input(style="visibility:hidden;" id="vSlider" type="range" min="0" max="1" step="0.01" value="0.5")
+            a(style="visibility:hidden;" id="togglePlay" class="nav-item")
+              span(class="icon")
+                i(class="fa fa-pause")
+          //- If external url is requested
+          block navTop
+    //- Body
+    div(class="section is-paddingless")
+      block content
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/p5.min.js")
+    //- script(src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/addons/p5.dom.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.10/addons/p5.sound.min.js")
+    block bottom
